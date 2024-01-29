@@ -9,7 +9,7 @@ execute:
   freeze: auto
 
 website:
-  repo-url: https://github.com/boettiger-lab/nasa-topst-env-justice
+  repo-url: https://github.com/espm-288/cloud-native-geo-cboettig
   repo-actions: [edit, issue]
   page-navigation: true
   sidebar:
@@ -19,9 +19,6 @@ website:
       - file: index.qmd
         icon: house
         text: About
-      - icon: github
-        text: GitHub source
-        href: https://github.com/boettiger-lab/nasa-topst-env-justice
       - section: Resources
         contents:
           - text: Catalog of catalogs
@@ -38,12 +35,6 @@ website:
           - text: Introduction
             icon: play-btn
             href: contents/intro.qmd
-          - text: Biodiversity Priorities
-            icon: tree-fill
-            href: contents/ace.qmd  
-          - text: NASA EarthData
-            icon: rocket
-            href: contents/earthdata.qmd  
       - section: Background
         contents:
           - text: Portable Environments
