@@ -6,7 +6,7 @@ on:
 name: Quarto Publish
 
 jobs:
-  build-deploy:
+  build-deploy:main
     runs-on: ubuntu-latest
     container: 
       image: ghcr.io/boettiger-lab/nasa-tops:latest
@@ -23,11 +23,7 @@ jobs:
 #      - name: Set up Quarto
 #        uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: update dependencies
-        run: python -m pip install -r .devcontainer/requirements.txt
-
       - name: Render and Publish
-        if: github.repository == 'boettiger-lab/nasa-topst-env-justice'
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
