@@ -6,7 +6,7 @@ on:
 name: Quarto Publish
 
 jobs:
-  build-deploy:main
+  build-deploy:
     runs-on: ubuntu-latest
     container: 
       image: ghcr.io/boettiger-lab/nasa-tops:latest
