@@ -1,0 +1,3 @@
+```{r}
+mtcars |> ggplot(aes(wt, mpg)) + geom_line()
+```
