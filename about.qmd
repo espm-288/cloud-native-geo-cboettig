@@ -1,0 +1,27 @@
+
+## Section 1
+
+- items
+- item [link](https://example.com)
+
+This is where I tell you about this project or about me...
+
+```
+this is a codeblock
+```
+
+```{r}
+
+```
+
+getting the description just right
+```{r}
+library(tidyverse)
+
+mtcars |> ggplot(aes(wt, mpg)) + geom_line()
+```
+
+
+```{r}
+
+```
