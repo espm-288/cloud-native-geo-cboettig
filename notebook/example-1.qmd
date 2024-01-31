@@ -41,6 +41,10 @@ data <-  raster_cube(col, cube, mask = mask)
 ```
 
 
+
+
+
+
 ```{r}
 ndvi <- data |>
   select_bands(c("B04", "B08")) |>
