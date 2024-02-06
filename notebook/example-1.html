@@ -98,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -124,10 +124,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebook/example-1.html">Notebook</a></li><li class="breadcrumb-item"><a href="../notebook/example-1.html">example 1</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Notebook</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebook/example-1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">example 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebook/example-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">example 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
@@ -159,87 +199,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstac)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gdalcubes)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: abind</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: sf</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Linking to GEOS 3.12.1, GDAL 3.8.2, PROJ 9.3.1; sf_use_s2() is TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'tmap'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:datasets':
-
-    rivers</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stars)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>box <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">xmin=</span><span class="sc">-</span><span class="fl">122.51</span>, <span class="at">ymin=</span><span class="fl">37.71</span>, <span class="at">xmax=</span><span class="sc">-</span><span class="fl">122.36</span>, <span class="at">ymax=</span><span class="fl">37.81</span>) </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>start_date <span class="ot">&lt;-</span> <span class="st">"2022-06-01"</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>end_date <span class="ot">&lt;-</span> <span class="st">"2022-08-01"</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stac</span>(<span class="st">"https://earth-search.aws.element84.com/v0/"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stac_search</span>(<span class="at">collections =</span> <span class="st">"sentinel-s2-l2a-cogs"</span>,</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">bbox =</span> box,</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">datetime =</span> <span class="fu">paste</span>(start_date, end_date, <span class="at">sep=</span><span class="st">"/"</span>),</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">limit =</span> <span class="dv">100</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ext_query</span>(<span class="st">"eo:cloud_cover"</span> <span class="sc">&lt;</span> <span class="dv">20</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">post_request</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>box <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">xmin=</span><span class="sc">-</span><span class="fl">122.51</span>, <span class="at">ymin=</span><span class="fl">37.71</span>, <span class="at">xmax=</span><span class="sc">-</span><span class="fl">122.36</span>, <span class="at">ymax=</span><span class="fl">37.81</span>) </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>start_date <span class="ot">&lt;-</span> <span class="st">"2022-06-01"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>end_date <span class="ot">&lt;-</span> <span class="st">"2022-08-01"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stac</span>(<span class="st">"https://earth-search.aws.element84.com/v0/"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stac_search</span>(<span class="at">collections =</span> <span class="st">"sentinel-s2-l2a-cogs"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">bbox =</span> box,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">datetime =</span> <span class="fu">paste</span>(start_date, end_date, <span class="at">sep=</span><span class="st">"/"</span>),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">limit =</span> <span class="dv">100</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ext_query</span>(<span class="st">"eo:cloud_cover"</span> <span class="sc">&lt;</span> <span class="dv">20</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">post_request</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> <span class="fu">stac_image_collection</span>(items<span class="sc">$</span>features, <span class="at">asset_names =</span> <span class="fu">c</span>(<span class="st">"B08"</span>, <span class="st">"B04"</span>, <span class="st">"SCL"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> <span class="fu">stac_image_collection</span>(items<span class="sc">$</span>features, <span class="at">asset_names =</span> <span class="fu">c</span>(<span class="st">"B08"</span>, <span class="st">"B04"</span>, <span class="st">"SCL"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in stac_image_collection(items$features, asset_names = c("B08", : STAC
 asset with name 'SCL' does not include eo:bands metadata and will be considered
 as a single band source</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>cube <span class="ot">&lt;-</span> <span class="fu">cube_view</span>(<span class="at">srs =</span><span class="st">"EPSG:4326"</span>,</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">extent =</span> <span class="fu">list</span>(<span class="at">t0 =</span> start_date, <span class="at">t1 =</span> end_date,</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                                <span class="at">left =</span> box[<span class="dv">1</span>], <span class="at">right =</span> box[<span class="dv">3</span>],</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">top =</span> box[<span class="dv">4</span>], <span class="at">bottom =</span> box[<span class="dv">2</span>]),</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">dx =</span> <span class="fl">0.0001</span>, <span class="at">dy =</span> <span class="fl">0.0001</span>, <span class="at">dt =</span> <span class="st">"P1D"</span>,</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">aggregation =</span> <span class="st">"median"</span>, <span class="at">resampling =</span> <span class="st">"average"</span>)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>mask <span class="ot">&lt;-</span> <span class="fu">image_mask</span>(<span class="st">"SCL"</span>, <span class="at">values=</span><span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">9</span>)) <span class="co"># mask clouds and cloud shadows</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span>  <span class="fu">raster_cube</span>(col, cube, <span class="at">mask =</span> mask)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cube <span class="ot">&lt;-</span> <span class="fu">cube_view</span>(<span class="at">srs =</span><span class="st">"EPSG:4326"</span>,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">extent =</span> <span class="fu">list</span>(<span class="at">t0 =</span> start_date, <span class="at">t1 =</span> end_date,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                                <span class="at">left =</span> box[<span class="dv">1</span>], <span class="at">right =</span> box[<span class="dv">3</span>],</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">top =</span> box[<span class="dv">4</span>], <span class="at">bottom =</span> box[<span class="dv">2</span>]),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">dx =</span> <span class="fl">0.0001</span>, <span class="at">dy =</span> <span class="fl">0.0001</span>, <span class="at">dt =</span> <span class="st">"P1D"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">aggregation =</span> <span class="st">"median"</span>, <span class="at">resampling =</span> <span class="st">"average"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>mask <span class="ot">&lt;-</span> <span class="fu">image_mask</span>(<span class="st">"SCL"</span>, <span class="at">values=</span><span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">9</span>)) <span class="co"># mask clouds and cloud shadows</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span>  <span class="fu">raster_cube</span>(col, cube, <span class="at">mask =</span> mask)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ndvi <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select_bands</span>(<span class="fu">c</span>(<span class="st">"B04"</span>, <span class="st">"B08"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">apply_pixel</span>(<span class="st">"(B08-B04)/(B08+B04)"</span>, <span class="st">"NDVI"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reduce_time</span>(<span class="fu">c</span>(<span class="st">"mean(NDVI)"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ndvi <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select_bands</span>(<span class="fu">c</span>(<span class="st">"B04"</span>, <span class="st">"B08"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">apply_pixel</span>(<span class="st">"(B08-B04)/(B08+B04)"</span>, <span class="st">"NDVI"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reduce_time</span>(<span class="fu">c</span>(<span class="st">"mean(NDVI)"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>ndvi_stars <span class="ot">&lt;-</span> <span class="fu">st_as_stars</span>(ndvi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ndvi_stars <span class="ot">&lt;-</span> <span class="fu">st_as_stars</span>(ndvi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mako <span class="ot">&lt;-</span> <span class="fu">tm_scale_continuous</span>(<span class="at">values =</span> viridisLite<span class="sc">::</span><span class="fu">mako</span>(<span class="dv">30</span>))</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>fill <span class="ot">&lt;-</span> <span class="fu">tm_scale_continuous</span>(<span class="at">values =</span> <span class="st">"Greens"</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(ndvi_stars) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">col.scale =</span> mako)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mako <span class="ot">&lt;-</span> <span class="fu">tm_scale_continuous</span>(<span class="at">values =</span> viridisLite<span class="sc">::</span><span class="fu">mako</span>(<span class="dv">30</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>fill <span class="ot">&lt;-</span> <span class="fu">tm_scale_continuous</span>(<span class="at">values =</span> <span class="st">"Greens"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(ndvi_stars) <span class="sc">+</span> <span class="fu">tm_raster</span>(<span class="at">col.scale =</span> mako)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in value[[3L]](cond): could not rename the data.table</code></pre>
 </div>
