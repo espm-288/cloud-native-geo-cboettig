@@ -90,3 +90,10 @@ fill <- tm_scale_continuous(values = "Greens")
 tm_shape(ndvi_stars) + tm_raster(col.scale = mako) + 
   tm_shape(sf_redlines) + tm_borders("grade", lwd=2)
 ```
+
+
+
+
+```{r include = FALSE}
+source("../utils/sigpipe.R")
+```
