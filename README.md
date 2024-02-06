@@ -1,14 +1,9 @@
-I'm just exploring markdown here, don't look a me.  :see_no_evil:
+# Welcome
 
-write some more
+This GitHub repository + notebook provides the real-time notes for our exploratory course on Cloud Native Geospatial Data in R & Python.  
 
-# heading
+The website is built using quarto to render qmd and ipynb files, and is rendered and published automatically through GitHub Actions.  
 
-- list item
-
-more changes
+Users can use GitHub Codespaces to interactively run all files in the notebook for free and without installing any software.
 
 
-
-
- here is one more line

@@ -1,6 +1,7 @@
 ---
-title: example 1
+title: "2: Adding Polygons"
 author: Carl Boettiger
+date: "2024-02-05"
 ---
 
 ```{r message = FALSE}
@@ -87,5 +88,5 @@ mako <- tm_scale_continuous(values = viridisLite::mako(30))
 fill <- tm_scale_continuous(values = "Greens")
 
 tm_shape(ndvi_stars) + tm_raster(col.scale = mako) + 
-  tm_shape(sf_redlines) + tm_borders(lwd=2)
+  tm_shape(sf_redlines) + tm_borders("grade", lwd=2)
 ```

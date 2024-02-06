@@ -1,6 +1,7 @@
 ---
-title: example 1
+title: "1: Satellite data"
 author: Carl Boettiger
+date: "2024-01-31"
 ---
 
 ```{r message = FALSE}

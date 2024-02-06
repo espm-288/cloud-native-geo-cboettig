@@ -1,9 +1,13 @@
 project:
   type: website
-  output-dir: docs
+  output-dir: "docs"
+  render:
+  - "*.qmd"
+  - "*.ipynb"
+  - "README.md"
 
-execute:
-  freeze: auto
+#execute:
+#  freeze: auto
 
 website:
   navbar:
@@ -11,9 +15,7 @@ website:
     search: true
     left:
       - text: "Home"
-        file: index.qmd
-      - text: "About"
-        file: about.qmd 
+        file: README.md 
 
   sidebar:
     contents: notebook         
