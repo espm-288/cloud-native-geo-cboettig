@@ -10,10 +10,12 @@ library(gdalcubes)
 library(stars)
 library(tmap)
 library(dplyr)
+earthdatalogin::gdal_cloud_config()
+gdalcubes::gdalcubes_options(parallel = TRUE)
 ```
 
 ```{r}
-box <- c(xmin=-122.51, ymin=37.71, xmax=-122.36, ymax=37.81) 
+box <- c(xmin=-123, ymin=37, xmax=-121, ymax=39) 
 start_date <- "2022-06-01"
 end_date <- "2022-08-01"
 items <-
@@ -33,7 +35,7 @@ cube <- cube_view(srs ="EPSG:4326",
                   extent = list(t0 = start_date, t1 = end_date,
                                 left = box[1], right = box[3],
                                 top = box[4], bottom = box[2]),
-                  dx = 0.0001, dy = 0.0001, dt = "P1D",
+                  dx = 0.001, dy = 0.001, dt = "P1M",
                   aggregation = "median", resampling = "average")
 
 mask <- image_mask("SCL", values=c(3, 8, 9)) # mask clouds and cloud shadows
