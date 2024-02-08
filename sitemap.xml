@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/espm-288/cloud-native-geo-cboettig/README.html</loc>
-    <lastmod>2024-02-07T00:34:19.994Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/notebook/example-1.html</loc>
-    <lastmod>2024-02-07T00:33:18.025Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/index.html</loc>
-    <lastmod>2024-02-07T00:31:36.304Z</lastmod>
+    <lastmod>2024-02-08T00:27:08.053Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/espm-288/cloud-native-geo-cboettig/notebook/example-2.html</loc>
-    <lastmod>2024-02-07T00:34:19.738Z</lastmod>
+    <lastmod>2024-02-08T00:22:43.669Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/index.html</loc>
+    <lastmod>2024-02-08T00:18:08.645Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/notebook/example-1.html</loc>
+    <lastmod>2024-02-08T00:21:21.417Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/notebook/example-4.html</loc>
+    <lastmod>2024-02-08T00:27:07.805Z</lastmod>
   </url>
 </urlset>
