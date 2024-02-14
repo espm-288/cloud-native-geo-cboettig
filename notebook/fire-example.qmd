@@ -1,0 +1,81 @@
+---
+title: Fire Severity using Normalized Burn Index
+---
+
+```{r}
+library(sf)
+library(tidyverse)
+library(tmap)
+library(rstac)
+library(gdalcubes)
+```
+
+
+```{r}
+
+url <- "https://34c031f8-c9fd-4018-8c5a-4159cdff6b0d-cdn-endpoint.azureedge.net/-/media/calfire-website/what-we-do/fire-resource-assessment-program---frap/gis-data/april-2023/fire221gdb.zip?rev=9e3e1e5e61e242d5b2994d666d72a91a&hash=F424990CD64BB7C4CF01C6CE211C0A59"
+download.file(url, "fire221.gdb.zip",  mode="wb")
+
+unzip("fire221.gdb.zip")
+```
+
+```{r}
+fire_polys <- 
+  read_sf("../fire22_1.gdb/", layer = "firep22_1") |> 
+  filter(st_is_valid(Shape))
+```
+
+```{r}
+jtree <- 
+  read_sf("/vsicurl/https://huggingface.co/datasets/cboettig/biodiversity/resolve/main/data/NPS.gdb") |> 
+  filter(UNIT_NAME == "Joshua Tree National Park") |> 
+  st_transform(st_crs(fire_polys))
+```
+
+```{r}
+fire_is_in_jtree <- st_intersects(fire_polys, jtree, sparse=FALSE)
+fire_jtree <- fire_polys |> filter(fire_is_in_jtree)
+```
+
+
+
+```{r}
+tmap_mode("view")
+tm_shape(jtree) + tm_polygons() + 
+ tm_shape(fire_jtree) + tm_polygons("YEAR_")
+```
+
+
+
+## Landsat example
+
+
+```{r}
+
+
+```
+
+## Sentinel-2 Example
+
+```{r}
+big_fire <- fire_jtree |> 
+  filter(YEAR_ > "2015") |> 
+  filter(Shape_Area == max(Shape_Area)) 
+
+big_fire
+box <- big_fire |> st_transform(4326) |> st_bbox()
+```
+
+
+
+```{r}
+items <-  
+  stac("https://planetarycomputer.microsoft.com/api/stac/v1")  |>
+  stac_search(collections = "sentinel-2-l2a",
+              datetime = paste("2022-05-15", "2022-06-03", sep="/"),
+              bbox = c(box))  |>
+  post_request() |>
+  items_sign(sign_planetary_computer())
+
+```
+

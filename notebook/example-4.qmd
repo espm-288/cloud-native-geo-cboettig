@@ -22,7 +22,7 @@ box_ca <- spData::us_states |> filter(NAME=="California") |> st_bbox()
 ```{r}
 box <- c(xmin=-123, ymin=37, xmax=-121, ymax=39) 
 box <- c(box_ca)
-item <-  
+items <-  
   stac("https://planetarycomputer.microsoft.com/api/stac/v1")  |>
   stac_search(collections = "io-biodiversity",
               bbox = box,

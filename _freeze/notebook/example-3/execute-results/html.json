@@ -1,0 +1,14 @@
+{
+  "hash": "7b135034cc934eb1a0380dcd4361f92b",
+  "result": {
+    "markdown": "---\ntitle: \"1: Satellite data\"\nauthor: Carl Boettiger\ndate: \"2024-01-31\"\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(rstac)\nlibrary(gdalcubes)\nlibrary(stars)\nlibrary(tmap)\nlibrary(dplyr)\nearthdatalogin::gdal_cloud_config()\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nbox <- c(xmin=-123, ymin=37, xmax=-121, ymax=39) \nstart_date <- \"2022-01-01\"\nend_date <- \"2022-12-31\"\nitems <-\n  stac(\"https://earth-search.aws.element84.com/v0/\") |>\n  stac_search(collections = \"sentinel-s2-l2a-cogs\",\n              bbox = box,\n              datetime = paste(start_date, end_date, sep=\"/\"),\n              limit = 100) |>\n  ext_query(\"eo:cloud_cover\" < 20) |>\n  post_request()\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ncol <- stac_image_collection(items$features, asset_names = c(\"B08\", \"B04\", \"SCL\"))\n```\n\n::: {.cell-output .cell-output-stderr}\n```\nWarning in stac_image_collection(items$features, asset_names = c(\"B08\", : STAC\nasset with name 'SCL' does not include eo:bands metadata and will be considered\nas a single band source\n```\n:::\n\n```{.r .cell-code}\ncube <- cube_view(srs =\"EPSG:4326\",\n                  extent = list(t0 = start_date, t1 = end_date,\n                                left = box[1], right = box[3],\n                                top = box[4], bottom = box[2]),\n                  dx = 0.01, dy = 0.01, dt = \"P1M\")\n\nmask <- image_mask(\"SCL\", values=c(3, 8, 9)) # mask clouds and cloud shadows\ndata <-  raster_cube(col, cube, mask = mask)\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nndvi <- data |>\n  select_bands(c(\"B04\", \"B08\")) |>\n  apply_pixel(\"(B08-B04)/(B08+B04)\", \"NDVI\") |>\n  animate(col = viridisLite::mako, fps=2, \n          save_as=\"ndvi.gif\")\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

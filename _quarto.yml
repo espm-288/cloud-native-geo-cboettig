@@ -5,8 +5,8 @@ project:
   - "*.ipynb"
   - "README.md"
 
-#execute:
-#  freeze: auto
+execute:
+  freeze: auto
 
 website:
   navbar:

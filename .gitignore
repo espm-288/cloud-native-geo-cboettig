@@ -136,3 +136,8 @@ cython_debug/
 .Rhistory
 *_files/libs/*
 docs
+_site
+
+*.gdb
+*.zip
+*.gif
