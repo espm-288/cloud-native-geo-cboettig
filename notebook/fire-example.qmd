@@ -21,7 +21,7 @@ unzip("fire221.gdb.zip")
 
 ```{r}
 fire_polys <- 
-  read_sf("../fire22_1.gdb/", layer = "firep22_1") |> 
+  read_sf("fire22_1.gdb", layer = "firep22_1") |> 
   filter(st_is_valid(Shape))
 ```
 
