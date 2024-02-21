@@ -1,5 +1,5 @@
 ---
-title: "3: Satellite data"
+title: "3: animations"
 author: Carl Boettiger
 date: "2024-02-05"
 ---

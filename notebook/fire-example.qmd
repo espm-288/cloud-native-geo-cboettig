@@ -2,8 +2,9 @@
 title: "5: Fire Severity using Normalized Burn Index"
 ---
 
-```{r}
+```{r setup, message=FALSE}
 library(sf)
+library(stars)
 library(tidyverse)
 library(tmap)
 library(rstac)
@@ -40,7 +41,7 @@ fire_jtree <- fire_polys |> filter(fire_is_in_jtree)
 
 
 ```{r}
-tmap_mode("view")
+tmap_mode("plot")
 tm_shape(jtree) + tm_polygons() + 
  tm_shape(fire_jtree) + tm_polygons("YEAR_")
 ```
@@ -62,20 +63,74 @@ big_fire <- fire_jtree |>
   filter(YEAR_ > "2015") |> 
   filter(Shape_Area == max(Shape_Area)) 
 
-big_fire
-box <- big_fire |> st_transform(4326) |> st_bbox()
+
+box <- big_fire |> st_transform(4326) |> st_bbox() 
+alarm_date <- big_fire$ALARM_DATE
 ```
 
 
 
 ```{r}
+start_date <- as.character( alarm_date - days(5) )
+end_date <- as.character( alarm_date + days(5) )
+
 items <-  
   stac("https://planetarycomputer.microsoft.com/api/stac/v1")  |>
   stac_search(collections = "sentinel-2-l2a",
-              datetime = paste("2022-05-15", "2022-06-03", sep="/"),
+              datetime = paste(start_date, end_date, sep="/"),
               bbox = c(box))  |>
   post_request() |>
   items_sign(sign_planetary_computer())
 
 ```
+
+
+
+```{r}
+col <- stac_image_collection(items$features, asset_names = c("B08", "B12", "SCL"))
+
+cube <- cube_view(srs ="EPSG:4326",
+                  extent = list(t0 = start_date, t1 = end_date,
+                                left = box[1], right = box[3],
+                                top = box[4], bottom = box[2]),
+                  dx = 0.0001, dy = 0.0001, dt = "P1D")
+
+mask <- image_mask("SCL", values=c(3, 8, 9)) # mask clouds and cloud shadows
+data <-  raster_cube(col, cube, mask = mask)
+```
+
+
+```{r}
+nbr <- data |> 
+  apply_pixel("(B08-B12)/(B08+B12)", "NBR") 
+
+before_fire <- nbr |> slice_time("2022-05-25") 
+after_fire <- nbr  |> slice_time("2022-05-30")
+```
+
+```{r}
+before_fire |> plot()
+
+```
+
+```{r}
+after_fire |> plot()
+
+```
+```{r}
+after_fire_stars <- after_fire |> st_as_stars()
+before_fire_stars <- before_fire |> st_as_stars()
+
+st_dimensions(before_fire_stars) <- st_dimensions(after_fire_stars)
+
+dnbr <- before_fire_stars - after_fire_stars
+```
+
+```{r}
+tmap_mode("view")
+tm_shape(dnbr) + tm_raster() +
+tm_shape(big_fire) + tm_borders() 
+```
+
+
 

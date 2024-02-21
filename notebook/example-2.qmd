@@ -4,6 +4,11 @@ author: Carl Boettiger
 date: "2024-02-05"
 ---
 
+```{r include=FALSE}
+knitr::opts_chunk$set(warning = FALSE)
+```
+
+
 ```{r message = FALSE}
 library(rstac)
 library(gdalcubes)
@@ -87,6 +92,16 @@ ndvi_stars <- st_as_stars(ndvi)
 mako <- tm_scale_continuous(values = viridisLite::mako(30))
 fill <- tm_scale_continuous(values = "Greens")
 
+tm_shape(ndvi_stars) + tm_raster(col.scale = mako) + 
+  tm_shape(sf_redlines) + tm_borders("grade", lwd=2)
+```
+
+## Interactive maps
+
+
+
+```{r results='asis'}
+tmap_mode("view")
 tm_shape(ndvi_stars) + tm_raster(col.scale = mako) + 
   tm_shape(sf_redlines) + tm_borders("grade", lwd=2)
 ```

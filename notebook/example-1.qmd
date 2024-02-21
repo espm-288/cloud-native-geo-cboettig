@@ -37,7 +37,12 @@ cube <- cube_view(srs ="EPSG:4326",
                                 top = box[4], bottom = box[2]),
                   dx = 0.001, dy = 0.001, dt = "P1M",
                   aggregation = "median", resampling = "average")
+```
 
+
+The  SCL data layer in Sentinel is one of three 'quality assurance' layers provided in this data catalog. Table 3 in this description of the [Sentinel-2 Level2A Specifications](https://docs.digitalearthafrica.org/en/latest/data_specs/Sentinel-2_Level-2A_specs.html) summarizes the classification codes (Cloud shadows, medium probability cloud, high probability cloud).  An image mask basically drops these bad pixels.  
+
+```{r}
 mask <- image_mask("SCL", values=c(3, 8, 9)) # mask clouds and cloud shadows
 
 data <-  raster_cube(col, cube, mask = mask)
