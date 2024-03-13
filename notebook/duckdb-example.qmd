@@ -1,5 +1,5 @@
 ---
-title: "duckdb"
+title: "6: duckdb"
 author: Carl Boettiger
 date: "2024-03-06"
 ---
