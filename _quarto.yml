@@ -24,4 +24,4 @@ website:
         file: README.md 
 
   sidebar:
-    contents: notebook         
+    contents: tutorials         
