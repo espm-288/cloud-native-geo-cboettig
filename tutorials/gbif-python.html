@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Carl Boettiger">
-<meta name="dcterms.date" content="2024-03-06">
 
-<title>6: duckdb</title>
+<title>7. gbif-python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -95,6 +93,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -141,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebook/duckdb-example.html">Notebook</a></li><li class="breadcrumb-item"><a href="../notebook/duckdb-example.html">6: duckdb</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">7. gbif-python</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -151,63 +152,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Notebook</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notebook/duckdb-example.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">6: duckdb</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notebook/example-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1: Satellite data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notebook/example-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2: Adding Polygons</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notebook/example-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3: animations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notebook/example-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4: Biodiversity Intactness Index</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notebook/fire-example.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5: Fire Severity using Normalized Burn Index</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notebook/gbif-python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Gbif Python</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -217,26 +161,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">6: duckdb</h1>
+<h1 class="title">7. gbif-python</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Carl Boettiger </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -244,132 +176,148 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(duckdbfs)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># SQL</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>pad <span class="ot">&lt;-</span> <span class="fu">open_dataset</span>(<span class="st">"https://data.source.coop/cboettig/pad-us-3/pad-us3-combined.parquet"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>pad_meta <span class="ot">&lt;-</span> duckdbfs<span class="sc">::</span><span class="fu">st_read_meta</span>(<span class="st">"https://data.source.coop/cboettig/pad-us-3/pad-us3-combined.fgb"</span>, <span class="at">tblname =</span> <span class="st">"pad_meta"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>pad_meta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install pydeck</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 7
-  feature_count geom_column_name geom_type     name  code   wkt            proj4
-          &lt;dbl&gt; &lt;chr&gt;            &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;
-1        440107 geom             Unknown (any) ESRI  102039 "PROJCS[\"USA… +pro…</code></pre>
+<pre><code>Collecting pydeck
+  Using cached pydeck-0.8.0-py2.py3-none-any.whl.metadata (3.9 kB)
+Collecting jinja2&gt;=2.10.1 (from pydeck)
+  Downloading Jinja2-3.1.3-py3-none-any.whl.metadata (3.3 kB)
+Collecting numpy&gt;=1.16.4 (from pydeck)
+  Downloading numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.0/61.0 kB 1.1 MB/s eta 0:00:00a 0:00:01
+Collecting MarkupSafe&gt;=2.0 (from jinja2&gt;=2.10.1-&gt;pydeck)
+  Downloading MarkupSafe-2.1.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.0 kB)
+Using cached pydeck-0.8.0-py2.py3-none-any.whl (4.7 MB)
+Downloading Jinja2-3.1.3-py3-none-any.whl (133 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.2/133.2 kB 3.7 MB/s eta 0:00:00
+Downloading numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.2/18.2 MB 45.3 MB/s eta 0:00:00:00:0100:01
+Downloading MarkupSafe-2.1.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+Installing collected packages: numpy, MarkupSafe, jinja2, pydeck
+Successfully installed MarkupSafe-2.1.5 jinja2-3.1.3 numpy-1.26.4 pydeck-0.8.0
+Note: you may need to restart the kernel to use updated packages.</code></pre>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pad <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(State_Nm <span class="sc">==</span> <span class="st">"CA"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(FeatClass) <span class="sc">|&gt;</span> </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_area =</span> <span class="fu">sum</span>(SHAPE_Area),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">collect</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Missing values are always removed in SQL aggregation functions.
-Use `na.rm = TRUE` to silence this warning
-This warning is displayed once every 8 hours.</code></pre>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a layer to display on a map</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>DATA <span class="op">=</span> <span class="st">'https://minio.carlboettiger.info/shared-data/mammalia_occ_gb.csv'</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pydeck <span class="im">as</span> pdk</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> pdk.Layer(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HexagonLayer"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    DATA,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    get_position<span class="op">=</span>[<span class="st">'lng'</span>, <span class="st">'lat'</span>],</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    elevation_scale<span class="op">=</span><span class="dv">100</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">#  elevation_range=[0, 1000],</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    get_fill_color <span class="op">=</span> [<span class="st">"elevation"</span>, <span class="st">"0"</span>, <span class="st">"elevation"</span>, <span class="dv">140</span>],</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    extruded<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    radius<span class="op">=</span><span class="dv">1000</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    auto_highlight<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    pickable<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    lower_percentile<span class="op">=</span><span class="fl">0.8</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.8</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the viewport location</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>view_state <span class="op">=</span> pdk.ViewState(</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    longitude<span class="op">=-</span><span class="fl">1.415</span>,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    latitude<span class="op">=</span><span class="fl">52.2323</span>,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    zoom<span class="op">=</span><span class="dv">4</span>,</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    min_zoom<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    max_zoom<span class="op">=</span><span class="dv">12</span>,</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    pitch<span class="op">=</span><span class="fl">40.5</span>,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    bearing<span class="op">=-</span><span class="fl">27.36</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Render</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> pdk.Deck(layers<span class="op">=</span>[layer], initial_view_state<span class="op">=</span>view_state)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>r.to_html(<span class="st">"hex_layer.html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+
+        <iframe width="100%" height="500" frameborder="0" srcdoc="<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; />
+    <title>pydeck</title>
+        <script src=&quot;https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js&quot;></script>
+        <link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css&quot; />
+    <link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css&quot; />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.8.*/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#deck-container canvas {
+  z-index: 1;
+  background: none;
+}
+    </style>
+  </head>
+  <body>
+    <div id=&quot;deck-container&quot;>
+    </div>
+  </body>
+  <script>
+    const container = document.getElementById('deck-container');
+    const jsonInput = {
+  &quot;initialViewState&quot;: {
+    &quot;bearing&quot;: -27.36,
+    &quot;latitude&quot;: 52.2323,
+    &quot;longitude&quot;: -1.415,
+    &quot;maxZoom&quot;: 12,
+    &quot;minZoom&quot;: 1,
+    &quot;pitch&quot;: 40.5,
+    &quot;zoom&quot;: 4
+  },
+  &quot;layers&quot;: [
+    {
+      &quot;@@type&quot;: &quot;HexagonLayer&quot;,
+      &quot;alpha&quot;: 0.8,
+      &quot;autoHighlight&quot;: true,
+      &quot;data&quot;: &quot;https://minio.carlboettiger.info/shared-data/mammalia_occ_gb.csv&quot;,
+      &quot;elevationScale&quot;: 100,
+      &quot;extruded&quot;: true,
+      &quot;getFillColor&quot;: &quot;@@=[elevation, 0, elevation, 140]&quot;,
+      &quot;getPosition&quot;: &quot;@@=[lng, lat]&quot;,
+      &quot;id&quot;: &quot;cfe28d18-a6a3-4500-94f3-192f2ac1bfd7&quot;,
+      &quot;lowerPercentile&quot;: 0.8,
+      &quot;pickable&quot;: true,
+      &quot;radius&quot;: 1000
+    }
+  ],
+  &quot;mapProvider&quot;: &quot;carto&quot;,
+  &quot;mapStyle&quot;: &quot;https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json&quot;,
+  &quot;views&quot;: [
+    {
+      &quot;@@type&quot;: &quot;MapView&quot;,
+      &quot;controller&quot;: true
+    }
+  ]
+};
+    const tooltip = true;
+    const customLibraries = null;
+    const configuration = null;
+
+    const deckInstance = createDeck({
+                  container,
+      jsonInput,
+      tooltip,
+      customLibraries,
+      configuration
+    });
+
+  </script>
+</html>"></iframe>
+    
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 3
-  FeatClass       total_area     n
-  &lt;chr&gt;                &lt;dbl&gt; &lt;dbl&gt;
-1 Proclamation 173843820097.   324
-2 Easement       7275244842. 11337
-3 Marine        36793465608.   214
-4 Designation  129887995064.  1293
-5 Fee          194547665576. 17873</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>duckdbfs<span class="sc">::</span><span class="fu">load_spatial</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Reading in as a normal tibble, and then converting to a spatial object:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ca_fee <span class="ot">&lt;-</span> pad <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(State_Nm <span class="sc">==</span> <span class="st">"CA"</span>, FeatClass <span class="sc">==</span> <span class="st">"Fee"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">collect</span>()</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>ca_fee <span class="sc">|&gt;</span> <span class="fu">st_as_sf</span>(<span class="at">sf_column_name =</span> <span class="st">"geometry"</span>, <span class="at">crs =</span> pad_meta<span class="sc">$</span>wkt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 17873 features and 34 fields
-Geometry type: GEOMETRY
-Dimension:     XY
-Bounding box:  xmin: -2349024 ymin: 1242361 xmax: -1646723 ymax: 2452203
-Projected CRS: USA_Contiguous_Albers_Equal_Area_Conic_USGS_version
-# A tibble: 17,873 × 35
-   FeatClass Category Own_Type Own_Name Loc_Own     Mang_Type Mang_Name Loc_Mang
- * &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;   
- 1 Fee       Fee      LOC      CITY     San Diego,… LOC       CITY      San Die…
- 2 Fee       Fee      LOC      CITY     San Diego,… LOC       CITY      San Die…
- 3 Fee       Fee      STAT     OTHS     University… STAT      OTHS      Univers…
- 4 Fee       Fee      STAT     OTHS     University… STAT      OTHS      Univers…
- 5 Fee       Fee      LOC      CITY     San Diego,… LOC       CITY      San Die…
- 6 Fee       Fee      LOC      CITY     San Diego,… LOC       CITY      San Die…
- 7 Fee       Fee      LOC      CITY     City of Sa… LOC       CITY      City of…
- 8 Fee       Fee      LOC      CITY     San Diego,… LOC       CITY      San Die…
- 9 Fee       Fee      LOC      CITY     San Diego,… LOC       CITY      San Die…
-10 Fee       Fee      LOC      CITY     San Diego,… LOC       CITY      San Die…
-# ℹ 17,863 more rows
-# ℹ 27 more variables: Des_Tp &lt;chr&gt;, Loc_Ds &lt;chr&gt;, Unit_Nm &lt;chr&gt;, Loc_Nm &lt;chr&gt;,
-#   State_Nm &lt;chr&gt;, Agg_Src &lt;chr&gt;, GIS_Src &lt;chr&gt;, Src_Date &lt;chr&gt;,
-#   GIS_Acres &lt;int&gt;, Source_PAID &lt;chr&gt;, WDPA_Cd &lt;int&gt;, Pub_Access &lt;chr&gt;,
-#   Access_Src &lt;chr&gt;, Access_Dt &lt;chr&gt;, GAP_Sts &lt;chr&gt;, GAPCdSrc &lt;chr&gt;,
-#   GAPCdDt &lt;chr&gt;, IUCN_Cat &lt;chr&gt;, IUCNCtSrc &lt;chr&gt;, IUCNCtDt &lt;chr&gt;,
-#   Date_Est &lt;chr&gt;, Comments &lt;chr&gt;, EsmtHldr &lt;chr&gt;, EHoldTyp &lt;chr&gt;, …</code></pre>
-</div>
-</div>
-<p>Similarly, any normal data frame can be coerced to a spatial <code>sf</code> object, e.g.:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">lon =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">lat=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">|&gt;</span> <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"lon"</span>, <span class="st">"lat"</span>), <span class="at">crs=</span><span class="dv">4326</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 2 features and 0 fields
-Geometry type: POINT
-Dimension:     XY
-Bounding box:  xmin: 1 ymin: 0 xmax: 2 ymax: 0
-Geodetic CRS:  WGS 84
-     geometry
-1 POINT (1 0)
-2 POINT (2 0)</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>spatial_ex <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://raw.githubusercontent.com/cboettig/duckdbfs/"</span>,</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"main/inst/extdata/spatial-test.csv"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">open_dataset</span>(<span class="at">format =</span> <span class="st">"csv"</span>) </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>spatial_ex <span class="sc">|&gt;</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">geometry =</span> <span class="fu">st_point</span>(longitude, latitude)) <span class="sc">|&gt;</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">to_sf</span>(<span class="at">crs =</span> <span class="dv">4326</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 10 features and 3 fields
-Geometry type: POINT
-Dimension:     XY
-Bounding box:  xmin: 1 ymin: 1 xmax: 10 ymax: 10
-Geodetic CRS:  WGS 84
-   site latitude longitude          geom
-1     a        1         1   POINT (1 1)
-2     b        2         2   POINT (2 2)
-3     c        3         3   POINT (3 3)
-4     d        4         4   POINT (4 4)
-5     e        5         5   POINT (5 5)
-6     f        6         6   POINT (6 6)
-7     g        7         7   POINT (7 7)
-8     h        8         8   POINT (8 8)
-9     i        9         9   POINT (9 9)
-10    j       10        10 POINT (10 10)</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>ca_fee <span class="ot">&lt;-</span> pad <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(State_Nm <span class="sc">==</span> <span class="st">"CA"</span>, FeatClass <span class="sc">==</span> <span class="st">"Fee"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Own_Type) <span class="sc">|&gt;</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total =</span> <span class="fu">sum</span>(SHAPE_Area)) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">1000</span>) <span class="sc">|&gt;</span> <span class="fu">collect</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/espm-288/cloud-native-geo-cboettig/README.html</loc>
-    <lastmod>2024-03-18T18:34:22.831Z</lastmod>
+    <lastmod>2024-04-15T20:50:09.842Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/notebook/fire-example.html</loc>
-    <lastmod>2024-03-18T18:34:22.347Z</lastmod>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-6.html</loc>
+    <lastmod>2024-04-15T20:50:09.366Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/notebook/example-3.html</loc>
-    <lastmod>2024-03-18T18:34:21.359Z</lastmod>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-4.html</loc>
+    <lastmod>2024-04-15T20:50:08.342Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/notebook/example-1.html</loc>
-    <lastmod>2024-03-18T18:34:19.999Z</lastmod>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-2.html</loc>
+    <lastmod>2024-04-15T20:50:07.474Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/espm-288/cloud-native-geo-cboettig/index.html</loc>
-    <lastmod>2024-03-18T18:34:18.795Z</lastmod>
+    <lastmod>2024-04-15T20:50:05.794Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/notebook/duckdb-example.html</loc>
-    <lastmod>2024-03-18T18:34:19.539Z</lastmod>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-1.html</loc>
+    <lastmod>2024-04-15T20:50:06.562Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/notebook/example-2.html</loc>
-    <lastmod>2024-03-18T18:34:20.915Z</lastmod>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-3.html</loc>
+    <lastmod>2024-04-15T20:50:07.938Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/notebook/example-4.html</loc>
-    <lastmod>2024-03-18T18:34:21.783Z</lastmod>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-5-fire.html</loc>
+    <lastmod>2024-04-15T20:50:08.902Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/notebook/gbif-python.html</loc>
-    <lastmod>2024-03-18T18:34:22.595Z</lastmod>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/gbif-python.html</loc>
+    <lastmod>2024-04-15T20:50:09.610Z</lastmod>
   </url>
 </urlset>
