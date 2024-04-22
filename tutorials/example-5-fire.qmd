@@ -145,3 +145,29 @@ tm_shape(big_fire) + tm_borders()
 
 
 
+## with slider
+
+We can use leaflet to create a slider bar.  This is more verbose than `tmap` but very powerful.  (Note that this example requires the GitHub)
+
+```{r}
+library(leaflet.extras2)
+library(terra) # leaflet doesn't know about the stars package yet
+
+
+    Map <- leaflet() |> 
+      addMapPane("right", zIndex = 0) |> 
+      addMapPane("left",  zIndex = 0) |>
+      addTiles(group = "base", layerId = "baseid1", options = pathOptions(pane = "right")) |> 
+      addTiles(group = "base", layerId = "baseid2", options = pathOptions(pane = "left")) |> 
+      addRasterImage(x = rast(after_fire_stars), options = leafletOptions(pane = "right"), group = "r1") |> 
+      addRasterImage(x = rast(before_fire_stars), options = leafletOptions(pane = "left"), group = "r2") |> 
+      addLayersControl(overlayGroups = c("r1", "r2")) |>  
+      addSidebyside(layerId = "sidecontrols",
+                    rightId = "baseid1",
+                    leftId  = "baseid2")
+    
+
+
+Map
+
+```
