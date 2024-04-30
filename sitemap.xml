@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/espm-288/cloud-native-geo-cboettig/README.html</loc>
-    <lastmod>2024-04-22T19:42:09.128Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-6.html</loc>
-    <lastmod>2024-04-22T19:42:08.624Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-4.html</loc>
-    <lastmod>2024-04-22T19:42:07.572Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-2.html</loc>
-    <lastmod>2024-04-22T19:42:06.680Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/index.html</loc>
-    <lastmod>2024-04-22T19:42:04.976Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-1.html</loc>
-    <lastmod>2024-04-22T19:42:05.752Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-3.html</loc>
-    <lastmod>2024-04-22T19:42:07.140Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-5-fire.html</loc>
-    <lastmod>2024-04-22T19:42:08.196Z</lastmod>
+    <lastmod>2024-04-30T18:42:42.893Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/gbif-python.html</loc>
-    <lastmod>2024-04-22T19:42:08.872Z</lastmod>
+    <lastmod>2024-04-30T18:42:42.369Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-5-fire.html</loc>
+    <lastmod>2024-04-30T18:42:41.673Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-3.html</loc>
+    <lastmod>2024-04-30T18:42:40.637Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-1.html</loc>
+    <lastmod>2024-04-30T18:42:39.281Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/index.html</loc>
+    <lastmod>2024-04-30T18:42:38.537Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-2.html</loc>
+    <lastmod>2024-04-30T18:42:40.189Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-4.html</loc>
+    <lastmod>2024-04-30T18:42:41.077Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/example-6.html</loc>
+    <lastmod>2024-04-30T18:42:42.109Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/espm-288/cloud-native-geo-cboettig/tutorials/lonboard-demo.html</loc>
+    <lastmod>2024-04-30T18:42:42.641Z</lastmod>
   </url>
 </urlset>
